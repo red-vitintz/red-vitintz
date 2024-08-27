@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>Carros</th>
+        <th>Valores</th>
+    </tr>
+    <tr>
+        <td>Renault kwid</td>
+        <td>R$ 48,790</td>
+    </tr>
+    <tr>
+        <td>Fiat Mobi</td>
+        <td>R$ 48,890</td>
+    </tr>
+    <tr>
+        <td>Hyndal HB20</td>
+        <td>R$63,690</td>
+    </tr>
+    <tr>
+        <td>Fiat Grand</td>
+        <td>R$ 64,290</td>
+    </tr>
+    <tr>
+        <td>Chevrolet Joy</td>
+        <td>R$65,200</td>
+    </tr>
+    <tr>
+        <td>Fiat Uno</td>
+        <td>R$66,290</td>
+    </tr>
+    <tr>
+        <td>Volkswagen Gol</td>
+        <td>R$67,790</td>
+    </tr>
+    <tr>
+        <td>Fiat Argo</td>
+        <td>R$68,490</td>
+    </tr>
+    <tr>
+        <td>Chevrolet Joy PLus</td>
+        <td>R$70,030</td>
+    </tr>
+    <tr>
+        <td>Chevrolet Onix</td>
+        <td>R$70,330</td>
+    </tr>
+</table>
+
+    
+</body>
+</html>
+
+
+
+
+table{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+th {
+    background-color: blueviolet;
+
+}
+td {
+    background-color: cornflowerblue;
+
+}
