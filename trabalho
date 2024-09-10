@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Viagem</title>
+    <link rel="stylesheet" type="text/css" href="style.css"
+    <script src="formJava.js"></script>
+
+
+
+</head>
+<body>
+
+    <h1>Formulario de Viagem</h1>
+    <form id="passagemForm">
+
+<h2>Verificando sua Viagem</h2>
+Nome Completo: <input type="text" id="nome" placeholder="Digite seu nome"/> <br/><br/>
+Data da Viagem: <input type="date" id="dat" placeholder="DD/MM/AAAA"/> <br/><br/>
+Horário de Ida da Viagem: <input type="time" id="horas" required> <br/><br/>
+Cidade de Origem da Viagem: <input list="cidades" id="cidade1" name="cidade" placeholder="Digite o nome da cidade">
+<datalist id="cidades">
+    <option value="Belo Horizonte - MG">
+    <option value="Rio de Janeiro - RJ">
+    <option value="Fortaleza - CE">
+    <option value="Salvador - BA">
+    <option value="Recife - PE">
+</datalist> <br/><br/>
+Cidade de Destino da Viagem: <input list="cidades" id="cidade2" name="cidade" placeholder="Digite o nome da cidade">
+<datalist id="cidades">
+    <option value="Belo Horizonte - MG">
+    <option value="Rio de Janeiro - RJ">
+    <option value="Fortaleza - CE">
+    <option value="Salvador - BA">
+    <option value="Recife - PE">
+</datalist> <br/><br/>
+
+
+<input id="botao" type="submit" >
+
+
+
+
+</form>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+-------------------------------------------------------------------------------------
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const formulario = document.getElementById('passagemForm')
+    formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const dat = document.getElementById('dat').value;
+    const horas = document.getElementById('horas').value;
+    const cidade1 = document.getElementById('cidade1').value;
+    const cidade2 = document.getElementById('cidade2').value
+
+alert(`Olá ${nome} já verificamos seus dados \n Agradecemos a sua participação`);
+    })
+})
