@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Viagem</title>
+    <script src="teste.js"></script>
+    <style>
+        /* Add some basic styling to our form */
+        form {
+            width: 50%;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <form id="travel-form">
+        <h2>Formulário de Viagem</h2>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="date">Data:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <label for="time">Horário:</label>
+        <input type="time" id="time" name="time"><br><br>
+        <label for="destination">Destino:</label>
+        <input type="text" id="destination" name="destination"><br><br>
+        <label for="embarkation-location">Local de Embarque:</label>
+        <input type="text" id="embarkation-location" name="embarkation-location"><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="teste.js"></script>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------------
+
+
+const form = document.getElementById('travel-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const destination = document.getElementById('destination').value;
+    const embarkationLocation = document.getElementById('embarkation-location').value;
+
+    console.log(`Nome: ${name}`);
+    console.log(`Data: ${date}`);
+    console.log(`Horário: ${time}`);
+    console.log(`Destino: ${destination}`);
+    console.log(`Local de Embarque: ${embarkationLocation}`);
+
+    
+
+    // You can add additional logic here to process the form data
+    // For example, you can send the data to a server using AJAX or fetch API
+});
