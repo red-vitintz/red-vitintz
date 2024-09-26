@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Persona</title>
+</head>
+<body>
+
+<header>
+    <h1>Conheça Nossa Persona</h1>
+</header>
+<br>
+
+
+    <section id="persona">
+        <img src="images.jpg" alt="Foto da Persona" id="persona-img">
+    </section>
+    <br></br>
+    <section id="info">
+        <p>Nome: Michael Bowie</p>
+        <p> Sexo: Masculino</p>
+        <p> Idade: 33 anos</p>
+        <p> Classe Social: Classe Média-Alta</p>
+        <p> Objetivos: Planeja construir sua carreira com grande estilo e impacto. Além disso, planeja ajudar na construção da carreira de outros artistas e novatos</p>
+        <p> Comportamento On-line: Compartilha momentos pessoais de forma autêntica, permitindo que os fãs vissem não apenas a estrela performática, mas também o lado humano e vulnerável.</p>
+    </section>
+<br></br>
+    <footer>
+        <p>&copy;2024 Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+body{
+    background-color: #3b637ec7;
+    }
+    #persona {
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #persona-img {
+        border-radius: 50%;
+        text-align: center;
+    }
+    #info{
+        background-color: rgba(47, 63, 92, 0.795);
+        text-align: center;
+        padding: 2rem 0;
+        margin: 20px;
+    }
+    footer{
+        background-color: rgba(47, 63, 92, 0.795);
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+    }
+    header{
+        background-color: rgba(47, 63, 92, 0.795);
+        padding: 2px;
+        align-items: center;
+    }
+    p{
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
