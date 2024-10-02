@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Persona</title>
+</head>
+<body>
+<header>
+    <h1>Conheça Nossa Persona</h1>
+</header>
+<br>
+<main>
+    <section id="persona">
+        <img src="images.jpg" alt="Foto da Persona" id="persona-img">
+    </section>
+    <br></br>
+    <section id="info">
+        <p>Nome: Michael Bowie</p>
+        <p> Sexo: Masculino</p>
+        <p> Idade: 33 anos</p>
+        <p> Classe Social: Classe Média-Alta</p>
+        <p> Objetivos: Planeja construir sua carreira com grande estilo e impacto. Além disso, planeja ajudar na construção da carreira de outros artistas e novatos</p>
+        <p> Comportamento On-line: Compartilha momentos pessoais de forma autêntica, permitindo que os fãs vissem não apenas a estrela performática, mas também o lado humano e vulnerável.</p>
+    </section>
+
+<div id="video">
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@capcutverse/video/7405227891245501697" data-video-id="7405227891245501697" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@capcutverse" href="https://www.tiktok.com/@capcutverse?refer=embed">@capcutverse</a> <a title="capcut" target="_blank" href="https://www.tiktok.com/tag/capcut?refer=embed">#CapCut</a> Hey there! Don&#39;t forget to use this template to share your favorite moments from August! ✨ <a title="augustdump" target="_blank" href="https://www.tiktok.com/tag/augustdump?refer=embed">#augustdump</a> <a title="dump" target="_blank" href="https://www.tiktok.com/tag/dump?refer=embed">#dump</a> <a title="recap" target="_blank" href="https://www.tiktok.com/tag/recap?refer=embed">#recap</a> <a title="memories" target="_blank" href="https://www.tiktok.com/tag/memories?refer=embed">#memories</a> <a title="edit" target="_blank" href="https://www.tiktok.com/tag/edit?refer=embed">#edit</a> <a title="aesthetic" target="_blank" href="https://www.tiktok.com/tag/aesthetic?refer=embed">#aesthetic</a> <a title="capcutverse" target="_blank" href="https://www.tiktok.com/tag/capcutverse?refer=embed">#capcutverse</a> <a title="travel" target="_blank" href="https://www.tiktok.com/tag/travel?refer=embed">#travel</a> <a title="capcuttemplate" target="_blank" href="https://www.tiktok.com/tag/capcuttemplate?refer=embed">#capcuttemplate</a> <a title="templatecapcut" target="_blank" href="https://www.tiktok.com/tag/templatecapcut?refer=embed">#templatecapcut</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="trend" target="_blank" href="https://www.tiktok.com/tag/trend?refer=embed">#trend</a> <a target="_blank" title="♬ TOO SWEET X RIVERS BY ALTÉGO - ALTÉGO" href="https://www.tiktok.com/music/TOO-SWEET-X-RIVERS-BY-ALTÉGO-7361163641268161313?refer=embed">♬ TOO SWEET X RIVERS BY ALTÉGO - ALTÉGO</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+</div>
+<section id="whats">
+    <h3 id="sla">Compre pelo Whatsapp</h3>
+    <p>Encontre a viagem ideal para você</p> <a id="wtt" href="https://web.whatsapp.com/">Reserve agora</a>
+</section>
+<br></br>
+<section id="baixar">
+    <h3 id="buser">Baixe o app da Buser</h3>
+    <p>É do app para a poltrona do onibus.</p>
+    <p> Sem burocracia e com segurança!</p> <a id="app" href="https://play.google.com/store/apps/details?id=br.com.buser.AppBuser&hl=pt_BR">Baixe o app</a>
+    <a id="Visite" href="https://apps.apple.com/br/app/apple-store/id375380948">App store</a>
+</section>
+</main>
+<br>
+    <footer>
+        <p>&copy;2024 Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------------
+
+
+body{
+    background-color: #3b637ec7;
+    }
+    #persona {
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #persona-img {
+        border-radius: 50%;
+        text-align: center;
+    }
+    #info{
+        background-color: rgba(47, 63, 92, 0.795);
+        text-align: center;
+        padding: 2rem 0;
+        margin: 20px;
+    }
+    footer{
+        background-color: rgba(47, 63, 92, 0.795);
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+    }
+    header{
+        background-color: rgba(47, 63, 92, 0.795);
+        padding: 2px;
+        align-items: center;
+    }
+    p{
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+    #whats{
+        background-color: rgba(47, 63, 92, 0.795);
+        padding: 15px;
+        width: 40%;
+        border-radius: 7px;
+    }
+    #wtt{
+        color: white;
+        text-decoration: none;
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 7px;
+        position: relative;
+        right: -400px;
+        top: -40px;
+    
+    }
+   
+    #baixar{
+        background-color: rgba(47, 63, 92, 0.795);
+        padding: 15px;
+        width: 40%;
+        border-radius: 7px;
+    }
+    #app{
+        color: white;
+        text-decoration: none;
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 7px;
+        position: relative;
+        right: -400px;
+        top: -90px;
+  
+    }
+ 
+    #Visite{
+        color: white;
+        text-decoration: none;
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 7px;
+        position: relative;
+        right: -307px;
+        top: -20px;
+        transition: background-color 0.3s;
+    }
+    #Visite:hover{
+background-color: blueviolet;
+ 
+    }
+    #buser{
+        color: deeppink;
+    }
+    #sla{
+        color: lime;
+    }
+    #video{
+        text-align: center;
+        margin: 80px;
+    }
+    #video iframe{
+        border-radius: 10px;
+        width: 100%;
+        max-width: 800px;
+    }
