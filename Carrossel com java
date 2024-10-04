@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div class="carrossel">
+        <div class="carrossel-seg">
+            <div class="carrossel-item">
+                <img src="img.jpg" alt="Imagem 1">
+            </div>
+            <div class="carrossel-item">
+                <img src="img2.jpg" alt="Imagem 2">
+            </div>
+            <div class="carrossel-item">
+                <img src="img3.jpg" alt="Imagem 3">
+            </div>
+        </div>
+    </div>
+    <!--Bolinhas de navegação-->
+    <div class="bolinhas">
+        <span class="bolinha"></span>
+        <span class="bolinha"></span>
+        <span class="bolinha"></span>
+    </div>
+    <script src="sexta.js"></script>
+    
+</body>
+</html>
+
+-------------------------------------------------------------------------------------------------------------
+
+
+.carrossel{
+    position: relative;
+    max-width: 500px;
+    max-height: 250px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+
+    
+}
+
+.carrossel-seg{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+}
+.carrossel-item{
+    min-width: 100%;
+
+}
+
+.carrossel-item img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+
+.bolinhas{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bolinha{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: darkslategrey;
+
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.bolinha:hover{
+    background-color: rgb(10, 10, 10);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+const bolinhas = document.querySelectorAll('.bolinha');
+const carrosselSeg = document.querySelector('.carrossel-seg');
+let index = 0; // index é a posição de um elemento.
+//Atualiza o carrossel ao clicar na bolinha.
+bolinhas.forEach((bolinha, i) => { 
+bolinha.addEventListener('click', () => {
+    index = i; // i representa o elemento atual guardado dentro da bolinha.
+    atualizarCarrossel();
+  });
+});//Função para atualizar a imagem e as bolinhas ativas.
+function atualizarCarrossel() {
+    //Atualiza a posição do carrossel.
+    carrosselSeg.style.transform = `transLateX(-${index * 100}%)`;
+    bolinhas.forEach(b => b.classList.remove('ativa'));
+    bolinhas[index].classList.add('ativa');
+}
