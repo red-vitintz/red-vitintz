@@ -1,0 +1,42 @@
+usuarios = []
+
+def responder_usuarios(pergunta):
+    pergunta = pergunta.lower()
+
+    if "oi" in pergunta or "olá" in pergunta:
+        return "Oi, tudo bem? Você gostaria de conferir o menu?"
+    
+    elif "menu" in pergunta:
+        return "Claro! Aqui estão as opções disponíveis:\n1. Criar usuário\n2. Listar usuários\n3. Sair"
+    
+    elif pergunta == '1':
+        nome = input("Digite o nome do usuário: ").strip()
+        if nome:
+            if nome in usuarios:
+                return f"Usuário '{nome}' já existe. Tente novamente."
+            else:
+                usuarios.append(nome)
+                return f"Usuário '{nome}' criado com sucesso!"
+        else:
+            return "Nome inválido. Tente novamente."
+
+    elif pergunta == '2':
+        if usuarios:
+            return "Usuários cadastrados:\n" + "\n".join(usuarios)
+        else:
+            return "Nenhum usuário cadastrado."
+
+    elif pergunta == '3':
+        return "Saindo do sistema. Até logo!"
+    
+    else:
+        return "Desculpe, não entendi sua pergunta. Você pode tentar novamente ou digitar 'menu' para ver as opções disponíveis."
+
+def main():
+    print("Bem-vindo ao sistema de usuários!")
+    while True:
+        pergunta = input("\nDigite uma opção ou pergunta: ")
+        resposta = responder_usuarios(pergunta)
+        print(resposta)
+        if pergunta == '3':
+            break
