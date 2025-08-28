@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>To Do List</title>
+    <meta charset="UTF-8" />
+    <title>Lista de Tarefas</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-
-        ul {
-            padding-left: 0;
-            list-style-type: none;
-        }
-
         li {
             cursor: pointer;
             padding: 8px;
@@ -30,69 +20,84 @@
 <body>
 
     <h1>Lista de Tarefas</h1>
+
+
     <input type="text" id="novaTarefa" placeholder="Digite uma tarefa">
     <button onclick="adicionarTarefa()">Adicionar</button>
+    <button onclick="limparTudo()">Limpar Tudo</button>
+
+   
+    <br><br>
+    <input type="text" id="campoPesquisar" placeholder="Pesquisar tarefas" oninput="carregarTarefas()">
 
     <ul id="listaTarefas"></ul>
 
-    <script src="script.js"></script>
-</body>
-</html>
+     <script src="script.js"></script>
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    carregarTarefas();
 
-
-
-
-// Carrega tarefas do localStorage quando a página é carregada
-document.addEventListener("DOMContentLoaded", carregarTarefas);
-
-// Função para adicionar tarefa
-function adicionarTarefa() {
-    const input = document.getElementById("novaTarefa");
-    const textoTarefa = input.value.trim();
-
-    if (textoTarefa === "") return;
-
-    let tarefas = obterTarefas();
-    tarefas.push(textoTarefa);
-    salvarTarefas(tarefas);
-
-    input.value = "";
-    carregarTarefas(); // Atualiza a lista na tela
-}
-
-// Função para carregar tarefas salvas e exibir na tela
-function carregarTarefas() {
-    const lista = document.getElementById("listaTarefas");
-    lista.innerHTML = "";
-
-    const tarefas = obterTarefas();
-    tarefas.forEach((tarefa, index) => {
-        const li = document.createElement("li");
-        li.textContent = tarefa;
-
-        // Remover ao clicar
-        li.onclick = () => removerTarefa(index);
-
-        lista.appendChild(li);
+    const inputNovaTarefa = document.getElementById("novaTarefa");
+    inputNovaTarefa.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            adicionarTarefa();
+        }
     });
-}
+});
 
-// Remove tarefa pelo índice
-function removerTarefa(index) {
-    let tarefas = obterTarefas();
-    tarefas.splice(index, 1); // Remove do array
-    salvarTarefas(tarefas);   // Atualiza o localStorage
-    carregarTarefas();        // Atualiza a lista na tela
-}
 
-// Utilitários do localStorage
-function obterTarefas() {
-    return JSON.parse(localStorage.getItem("tarefas")) || [];
-}
+        function adicionarTarefa() {
+            const input = document.getElementById("novaTarefa");
+            const textoTarefa = input.value.trim();
 
-function salvarTarefas(tarefas) {
-    localStorage.setItem("tarefas", JSON.stringify(tarefas));
-}
+            if (textoTarefa === "") return;
+
+            let tarefas = obterTarefas();
+            tarefas.push(textoTarefa);
+            salvarTarefas(tarefas);
+
+            input.value = "";
+            carregarTarefas();
+        }
+
+        function carregarTarefas() {
+            const lista = document.getElementById("listaTarefas");
+            lista.innerHTML = "";
+
+            const tarefas = obterTarefas();
+
+            
+            const filtro = document.getElementById("campoPesquisar").value.toLowerCase();
+
+            tarefas.forEach((tarefa, index) => {
+                
+                if (tarefa.toLowerCase().includes(filtro)) {
+                    const li = document.createElement("li");
+                    li.textContent = tarefa;
+                    li.onclick = () => removerTarefa(index);
+                    lista.appendChild(li);
+                }
+            });
+        }
+
+        function removerTarefa(index) {
+            let tarefas = obterTarefas();
+            tarefas.splice(index, 1);
+            salvarTarefas(tarefas);
+            carregarTarefas();
+        }
+
+        function limparTudo() {
+            salvarTarefas([]);
+            carregarTarefas();
+        }
+
+        function obterTarefas() {
+            return JSON.parse(localStorage.getItem("tarefas")) || [];
+        }
+
+        function salvarTarefas(tarefas) {
+            localStorage.setItem("tarefas", JSON.stringify(tarefas));
+        }
