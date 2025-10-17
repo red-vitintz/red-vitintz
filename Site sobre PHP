@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Site sobre PHP - Responsivo</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #333;
+  }
+
+  :root {
+    --primary-color: #6f42c1; 
+    --secondary-color: #ff6f61; 
+    --accent-color: #007bff; 
+    --bg-color: #fff;
+    --text-light: #777;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background-color: var(--secondary-color);
+  }
+
+  /* Menu Hamburguer */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 4px;
+    border-radius: 2px;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    background-color: var(--bg-color);
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.3rem;
+  }
+
+  section p {
+    margin-bottom: 1rem;
+    color: #444;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    background-color: #f0f0f5;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .card h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.7rem;
+  }
+
+  footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* RESPONSIVIDADE */
+  @media(max-width: 900px) {
+    .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media(max-width: 600px) {
+    header {
+      padding: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
+      background-color: var(--primary-color);
+      flex-direction: column;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    nav ul li a {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      display: block;
+    }
+
+    nav ul li:last-child a {
+      border-bottom: none;
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    main {
+      margin: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    section {
+      padding: 1.2rem 1rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+    }
+
+    section p, ul li {
+      font-size: 1rem;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      padding: 0.8rem;
+    }
+  }
+
+  @media(max-width: 400px) {
+    body {
+      font-size: 14px;
+    }
+
+    nav ul li a {
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PHP & Desenvolvimento Web</h1>
+
+  <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav-menu" aria-label="Menu principal">
+    <ul>
+      <li><a href="#historia">História</a></li>
+      <li><a href="#mercado">Mercado</a></li>
+      <li><a href="#profissional">Profissional</a></li>
+      <li><a href="#xampp-vsc">XAMPP + VSC</a></li>
+      <li><a href="#stack">Back-End / Front-End / Full Stack</a></li>
+    
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="historia">
+    <h2>História do PHP</h2>
+    <p>PHP (Hypertext Preprocessor) foi criado em 1994 por Rasmus Lerdorf como um conjunto de scripts CGI para monitorar visitas em seu site pessoal.</p>
+    <p>Desde então, evoluiu para uma das linguagens de programação mais usadas para desenvolvimento web, especialmente para back-end.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="Logo PHP" />
+  </section>
+
+  <section id="mercado">
+    <h2>Mercado</h2>
+    <p>PHP é amplamente usado para criar sites dinâmicos e aplicações web robustas. Grandes plataformas como Facebook, Wikipedia e WordPress utilizam PHP.</p>
+    <p>O mercado para desenvolvedores PHP ainda é forte, especialmente em projetos de manutenção, desenvolvimento rápido e CMS.</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Mercado de Trabalho" />
+  </section>
+
+  <section id="profissional">
+    <h2>Profissional PHP</h2>
+    <p>Um profissional PHP pode trabalhar como desenvolvedor back-end, integrando bancos de dados, APIs e criando sistemas web completos.</p>
+    <p>Habilidades importantes incluem conhecimento de frameworks PHP (Laravel, Symfony), bancos de dados (MySQL, PostgreSQL) e controle de versão (Git).</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Profissional de TI" />
+  </section>
+
+  <section id="xampp-vsc">
+    <h2>Ambiente XAMPP + Visual Studio Code (VSC)</h2>
+    <p>XAMPP é um pacote gratuito que instala Apache, MySQL, PHP e outras ferramentas em seu computador, facilitando o desenvolvimento local.</p>
+    <p>Visual Studio Code é um editor de código leve e poderoso, com suporte para PHP via extensões, que ajuda a escrever, depurar e controlar seu código.</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="XAMPP Logo" style="max-width: 150px;" />
+    <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png" alt="VS Code Logo" style="max-width: 150px;" />
+  </section>
+
+  <section id="stack">
+    <h2>Back-End, Front-End e Full Stack</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Back-End</h3>
+        <p>O back-end é responsável pela lógica do servidor, banco de dados, autenticação e manipulação de dados. PHP é uma das principais linguagens para back-end.</p>
+      </div>
+      <div class="card">
+        <h3>Front-End</h3>
+        <p>O front-end é a parte visual e interativa do site, utilizando HTML, CSS e JavaScript. Desenvolvedores front-end focam na experiência do usuário.</p>
+      </div>
+      <div class="card">
+        <h3>Full Stack</h3>
+        <p>Desenvolvedores full stack atuam tanto no front-end quanto no back-end, integrando sistemas completos e entendendo toda a cadeia de desenvolvimento web.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="webdesign">
+    <h2>Web Design e Técnicas Aplicadas</h2>
+    <p>Um bom web design combina estética e usabilidade. Aqui aplicamos:</p>
+    <ul>
+      <li><strong>Tipografia:</strong> Fonte limpa e legível, com hierarquia clara de títulos e textos.</li>
+      <li><strong>Cores:</strong> Paleta harmoniosa com roxo, coral e azul para destacar e criar contraste.</li>
+      <li><strong>Imagens:</strong> Usadas para ilustrar conceitos e tornar o conteúdo mais atrativo.</li>
+      <li><strong>Responsividade:</strong> Layout adaptável para celulares, tablets e desktops, garantindo boa experiência.</li>
+      <li><strong>Espaçamento e alinhamento:</strong> Uso de margens e paddings para facilitar a leitura e organização visual.</li>
+    </ul>
+    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920333.png" alt="Design Responsivo" />
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 - Site sobre PHP & Desenvolvimento Web. Todos os direitos reservados.
+</footer>
+
+<script>
+  // Toggle menu mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Acessibilidade: abrir menu com Enter ou Espaço
+  menuToggle.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navMenu.classList.toggle('active');
+    }
+  });
+</script>
+
+</body>
+</html>
