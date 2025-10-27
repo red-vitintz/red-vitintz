@@ -1,0 +1,8 @@
+<?php
+	$rifa = rand (1,300);
+	echo "numero sorteado da rifa: $rifa<br><br>";
+	
+	$mega = array_rand(array_flip(range(1,60)), 6);
+	sort($mega);
+	echo "numeros sorteados da mega-sena:" . implode(" - ", $mega);
+?>
